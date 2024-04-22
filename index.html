@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en" class="sl-theme-dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aman Sanoj</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script
+      defer
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.15.0/cdn/shoelace-autoloader.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.15.0/cdn/themes/dark.css"
+      onload="document.documentElement.classList.add('sl-theme-dark');"
+    />
+    <link
+      href="/assets/images/favicon-black.ico"
+      rel="icon"
+      media="(prefers-color-scheme: light)"
+    />
+    <link
+      href="/assets/images/favicon-white.ico"
+      rel="icon"
+      media="(prefers-color-scheme: dark)"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="navbar">
+        <a href="#section1">
+          <img
+            id="logo"
+            src="/assets/images/transparent-white.svg"
+            alt="Aman Sanoj Logo"
+          />
+        </a>
+        <div class="navlinks">
+          <a href="#section1" class="navlink">Home</a>
+          <a href="#section2" class="navlink">About</a>
+          <a style="cursor: not-allowed;" class="navlink">Projects</a>
+          <a href="#section4" class="navlink">Certifications</a>
+        </div>
+        <sl-button id="cta" pill href="#section5">Contact</sl-button>
+        <sl-dropdown>
+          <sl-button slot="trigger" caret>Menu</sl-button>
+          <sl-menu>
+            <sl-menu-item><a href="#section1">Home</a></sl-menu-item>
+            <sl-menu-item><a href="#section2">About</a></sl-menu-item>
+            <sl-menu-item disabled><a href="#section4">Projects</a></sl-menu-item>
+            <sl-menu-item><a href="#section4">Certifications</a></sl-menu-item>
+            <sl-menu-item><a href="#section5">Contact</a></sl-menu-item>
+            <sl-divider></sl-divider>
+          </sl-menu>
+        </sl-dropdown>
+      </div>
+    </header>
+    <main>
+      <div id="section1">
+        <h1>Aman<br />Sanoj</h1>
+      </div>
+      <div class="fw-wrapper" style="transform: translateY(-350%)">
+        <sl-button href="#section2" circle>
+          <sl-icon name="arrow-down" label="Arrow Down"></sl-icon>
+        </sl-button>
+      </div>
+      <div id="section2">
+        <div class="card">
+          <h2>About Me</h2>
+          <p>
+            Hey I'm <span style="color: #35185a">Aman</span>, a
+            <span id="age"></span>-year-old student originally from
+            <span
+              style="background-image: linear-gradient(90deg, #ff671f, #046a38)"
+              class="gradient-text"
+              >India</span
+            >
+            and currently based in the
+            <span
+              style="
+                background-image: linear-gradient(
+                  90deg,
+                  #ef3340 0%,
+                  #009739 40%,
+                  #000 100%
+                );
+              "
+              class="gradient-text"
+              >UAE</span
+            >. My journey into programming started at age 12, driven by a deep
+            fascination with computers. Over time, web design and development
+            became my passion, and I enjoy staying updated with the latest
+            trends through blogs,
+            <span
+              style="background-image: linear-gradient(90deg, #90030c, #bf2626)"
+              class="gradient-text"
+              >YouTube</span
+            >
+            , and social media. While I haven't identified specific favorite
+            projects yet, I find joy in the continuous learning process within
+            this dynamic field. Outside of programming, I'm a hobbyist
+            <span
+              style="background-image: linear-gradient(90deg, #69923e, #4e7837)"
+              class="gradient-text"
+              >Chess</span
+            >
+            player and enjoy listening to music for relaxation and enjoyment.
+          </p>
+        </div>
+      </div>
+      <div id="section4">
+        <h1 style="margin: 0 auto; margin-bottom: 5px">My Certifications</h1>
+        <div class="grid">
+          <img id="a" src="/assets/certificates/cert1.jpg" alt="" />
+          <img src="/assets/certificates/cert2.jpg" alt="" />
+          <img src="/assets/certificates/cert3.jpg" alt="" />
+          <img src="/assets/certificates/cert4.jpg" alt="" />
+          <img src="/assets/certificates/cert5.jpg" alt="" />
+          <img src="/assets/certificates/cert6.jpg" alt="" />
+          <img src="/assets/certificates/cert7.jpg" alt="" />
+          <img src="/assets/certificates/cert8.jpg" alt="" />
+          <img id="b" src="/assets/certificates/cert9.jpg" alt="" />
+          <img src="/assets/certificates/cert10.jpg" alt="" />
+        </div>
+        <sl-button id="show-hide" pill onclick="showHideCerts()"
+          >Show More</sl-button
+        >
+      </div>
+    </main>
+    <div id="section5"></div>
+    <footer>
+      <ul id="a">
+        <li>
+          <h1>
+            <img
+              src="/assets/images/transparent-white.svg"
+              alt="Aman Sanoj Logo"
+              style="height: 1em; width: auto"
+            />
+          </h1>
+        </li>
+      </ul>
+      <ul>
+        <li><h3>Get in Touch</h3></li>
+        <li>
+          <a
+            href="mailto:aman-sanoj@outlook.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><sl-icon name="envelope"></sl-icon>Email</a
+          >
+        </li>
+        <li>
+          <a
+            href="http://github.com/AmanSanoj"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><sl-icon name="github"></sl-icon>GitHub</a
+          >
+        </li>
+        <li>
+          <a
+            href="http://twitter.com/AmanSanoj"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><sl-icon name="twitter"></sl-icon>Twitter</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://www.reddit.com/user/Enigmatic-Cipher/"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><sl-icon name="reddit"></sl-icon>Reddit</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://instagram.com/aman_sanoj/"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><sl-icon name="instagram"></sl-icon>Instagram</a
+          >
+        </li>
+      </ul>
+      <ul>
+        <li><h3>Sitemap</h3></li>
+        <li><a href="#section1">Home</a></li>
+        <li><a href="#section2">About</a></li>
+        <li><a href="#section3">Projects</a></li>
+        <li><a href="#section4">Certifications</a></li>
+      </ul>
+    </footer>
+    <sl-divider></sl-divider>
+    <div id="copyright">
+      <p>Made with <sl-icon name="suit-heart-fill"></sl-icon></p>
+<p>&#169 Aman Sanoj 2024</p>
+    </div>
+  </body>
+  <script>
+    let age = document.getElementById("age");
+    currentAge = Math.floor(
+      (new Date().getTime() / 1000 - 1225526400) / (60 * 60 * 24 * 365)
+    );
+    age.innerHTML = currentAge;
+
+    let certs = document.querySelectorAll("#section4 img:nth-child(n+6)");
+    let showHide = document.getElementById("show-hide");
+    let l = certs.length;
+    let state = false;
+
+    function showHideCerts() {
+      if (!state) {
+        let x = 0;
+        for (; x < l; x++) {
+          certs[x].style.display = "block";
+        }
+        showHide.innerHTML = "Show Less";
+        return (state = true);
+      } else {
+        let y = 0;
+        for (; y < l; y++) {
+          certs[y].style.display = "none";
+        }
+        showHide.innerHTML = "Show More";
+        return (state = false);
+      }
+    }
+  </script>
+</html>
