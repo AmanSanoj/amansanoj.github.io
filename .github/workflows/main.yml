@@ -7,7 +7,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Upload ftp
-      uses: genietim/ftp-action@releases/v4
+      uses: GenieTim/ftp-action@v4.0.1
       with:
         host: ftpupload.net
         user: if0_37803392
