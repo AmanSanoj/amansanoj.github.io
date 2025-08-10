@@ -1,15 +1,14 @@
-// generate-certs-json.js
-import { readdirSync, writeFileSync } from "fs";
-import { join, extname } from "path";
+const fs = require("fs");
+const path = require("path");
 
-const certDir = join(__dirname, "assets", "certificates");
-const outputFile = join(certDir, "certificates.json");
+const certDir = path.join(__dirname, "assets", "certificates");
+const outputFile = path.join(certDir, "certificates.json");
 
 // Acceptable extensions
 const exts = [".png", ".jpg", ".jpeg"];
 
-const certs = readdirSync(certDir)
-  .filter(file => exts.includes(extname(file).toLowerCase()))
+const certs = fs.readdirSync(certDir)
+  .filter(file => exts.includes(path.extname(file).toLowerCase()))
   .sort((a, b) => {
     const parseDate = str => {
       const name = str.split(".")[0]; // remove extension
@@ -27,5 +26,5 @@ const certs = readdirSync(certDir)
     return a.localeCompare(b);
   });
 
-writeFileSync(outputFile, JSON.stringify(certs, null, 2));
+fs.writeFileSync(outputFile, JSON.stringify(certs, null, 2));
 console.log(`Generated certificates.json with ${certs.length} files.`);
