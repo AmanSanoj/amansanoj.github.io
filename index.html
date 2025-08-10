@@ -1,266 +1,214 @@
 <!DOCTYPE html>
 <html lang="en" class="sl-theme-dark">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="title" content="Aman Sanoj">
-    <meta name="description" content="Student, from Kerala, based in the UAE. Web Applications and experimenting">
-    <meta name="keywords" content="UAE, Kerala, Student, Web Development, Web Design, Web, Programming, JavaScript, CSS, HTML, Vue, Nuxt">
-    <meta name="robots" content="index, follow">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="language" content="English">
-    <meta name="revisit-after" content="15 days">
-    <meta name="author" content="Aman Sanoj">
-    <meta name="google-site-verification" content="CkwJuzxJc5bqWRrngiQGY5f-4AEhBYTfuOqg4gFG-b4" />
-    <title>Aman Sanoj</title>
-    <link rel="stylesheet" href="styles.css" />
-    <script
-      defer
-      type="module"
-      src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.15.0/cdn/shoelace-autoloader.js"
-    ></script>
-    <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.15.0/cdn/themes/dark.css"
-      onload="document.documentElement.classList.add('sl-theme-dark');"
-    />
-    <link
-      href="/assets/images/favicon-black.ico"
-      rel="icon"
-      media="(prefers-color-scheme: light)"
-    />
-    <link
-      href="/assets/images/favicon-white.ico"
-      rel="icon"
-      media="(prefers-color-scheme: dark)"
-    />
-  </head>
-  <body>
-    <header>
-      <div class="navbar">
-        <a href="#section1">
-          <img
-            id="logo"
-            src="/assets/images/transparent-white.svg"
-            alt="Aman Sanoj Logo"
-          />
-        </a>
-        <div class="navlinks">
-          <a href="#section1" class="navlink">Home</a>
-          <a href="#section2" class="navlink">About</a>
-          <a style="cursor: not-allowed;" class="navlink">Projects</a>
-          <a href="#section4" class="navlink">Certifications</a>
-        </div>
-        <sl-button id="cta" pill href="#section5">Contact</sl-button>
-        <sl-dropdown>
-          <sl-button slot="trigger" caret>Menu</sl-button>
-          <sl-menu>
-            <sl-menu-item><a href="#section1">Home</a></sl-menu-item>
-            <sl-menu-item><a href="#section2">About</a></sl-menu-item>
-            <sl-menu-item disabled><a href="#section4">Projects</a></sl-menu-item>
-            <sl-menu-item><a href="#section4">Certifications</a></sl-menu-item>
-            <sl-menu-item><a href="#section5">Contact</a></sl-menu-item>
-            <sl-divider></sl-divider>
-          </sl-menu>
-        </sl-dropdown>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="title" content="Aman Sanoj">
+  <meta name="description" content="Student, from Kerala, based in the UAE. Web Applications and experimenting">
+  <meta name="keywords"
+    content="UAE, Kerala, Student, Web Development, Web Design, Web, Programming, JavaScript, CSS, HTML, Vue, Nuxt">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="language" content="English">
+  <meta name="revisit-after" content="15 days">
+  <meta name="author" content="Aman Sanoj">
+  <meta name="google-site-verification" content="CkwJuzxJc5bqWRrngiQGY5f-4AEhBYTfuOqg4gFG-b4" />
+  <title>Aman Sanoj</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer type="module"
+    src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.15.0/cdn/shoelace-autoloader.js"></script>
+  <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.15.0/cdn/themes/dark.css"
+    onload="document.documentElement.classList.add('sl-theme-dark');" />
+  <link href="/assets/images/favicon-black.ico" rel="icon" media="(prefers-color-scheme: light)" />
+  <link href="/assets/images/favicon-white.ico" rel="icon" media="(prefers-color-scheme: dark)" />
+</head>
+
+<body>
+  <header>
+    <div class="navbar">
+      <a href="#section1">
+        <img id="logo" src="/assets/images/transparent-white.svg" alt="Aman Sanoj Logo" />
+      </a>
+      <div class="navlinks">
+        <a href="#section1" class="navlink">Home</a>
+        <a href="#section2" class="navlink">About</a>
+        <a style="cursor: not-allowed;" class="navlink">Projects</a>
+        <a href="#section4" class="navlink">Certifications</a>
       </div>
-    </header>
-    <main>
-      <div id="section1">
-        <h1>Aman<br />Sanoj</h1>
-      </div>
-      <div class="fw-wrapper" style="transform: translateY(-350%)">
-        <sl-button href="#section2" circle>
-          <sl-icon name="arrow-down" label="Arrow Down"></sl-icon>
-        </sl-button>
-      </div>
-      <div id="section2">
-        <div class="card">
-          <h2>About Me</h2>
-          <p>
-            Hey I'm <span style="color: #35185a">Aman</span>, a
-            <span id="age"></span>-year-old student originally from
-            <span
-              style="background-image: linear-gradient(90deg, #ff671f, #046a38)"
-              class="gradient-text"
-              >India</span
-            >
-            and currently based in the
-            <span
-              style="
+      <sl-button id="cta" pill href="#section5">Contact</sl-button>
+      <sl-dropdown>
+        <sl-button slot="trigger" caret>Menu</sl-button>
+        <sl-menu>
+          <sl-menu-item><a href="#section1">Home</a></sl-menu-item>
+          <sl-menu-item><a href="#section2">About</a></sl-menu-item>
+          <sl-menu-item disabled><a href="#section4">Projects</a></sl-menu-item>
+          <sl-menu-item><a href="#section4">Certifications</a></sl-menu-item>
+          <sl-menu-item><a href="#section5">Contact</a></sl-menu-item>
+          <sl-divider></sl-divider>
+        </sl-menu>
+      </sl-dropdown>
+    </div>
+  </header>
+  <main>
+    <div id="section1">
+      <h1>Aman<br />Sanoj</h1>
+    </div>
+    <div class="fw-wrapper" style="transform: translateY(-350%)">
+      <sl-button href="#section2" circle>
+        <sl-icon name="arrow-down" label="Arrow Down"></sl-icon>
+      </sl-button>
+    </div>
+    <div id="section2">
+      <div class="card">
+        <h2>About Me</h2>
+        <p>
+          Hey I'm <span style="color: #35185a">Aman</span>, a
+          <span id="age"></span>-year-old student originally from
+          <span style="background-image: linear-gradient(90deg, #ff671f, #046a38)" class="gradient-text">India</span>
+          and currently based in the
+          <span style="
                 background-image: linear-gradient(
                   90deg,
                   #ef3340 0%,
                   #009739 40%,
                   #000 100%
                 );
-              "
-              class="gradient-text"
-              >UAE</span
-            >. My journey into programming started at age 12, driven by a deep
-            fascination with computers. Over time, web design and development
-            became my passion, and I enjoy staying updated with the latest
-            trends through blogs,
-            <span
-              style="background-image: linear-gradient(90deg, #90030c, #bf2626)"
-              class="gradient-text"
-              >YouTube</span
-            >
-            , and social media. While I haven't identified specific favorite
-            projects yet, I find joy in the continuous learning process within
-            this dynamic field. Outside of programming, I'm a hobbyist
-            <span
-              style="background-image: linear-gradient(90deg, #69923e, #4e7837)"
-              class="gradient-text"
-              >Chess</span
-            >
-            player and enjoy listening to music for relaxation and enjoyment.
-          </p>
-        </div>
+              " class="gradient-text">UAE</span>. My journey into programming started at age 12, driven by a deep
+          fascination with computers. Over time, web design and development
+          became my passion, and I enjoy staying updated with the latest
+          trends through blogs,
+          <span style="background-image: linear-gradient(90deg, #90030c, #bf2626)" class="gradient-text">YouTube</span>
+          , and social media. While I haven't identified specific favorite
+          projects yet, I find joy in the continuous learning process within
+          this dynamic field. Outside of programming, I'm a hobbyist
+          <span style="background-image: linear-gradient(90deg, #69923e, #4e7837)" class="gradient-text">Chess</span>
+          player and enjoy listening to music for relaxation and enjoyment.
+        </p>
       </div>
-      <div id="section4">
-        <h1 style="margin: 0 auto; margin-bottom: 5px">My Certifications</h1>
-        <div class="grid" id="cert-grid"></div>
-        <sl-button id="show-hide" pill>Show More</sl-button>
-      </div>
-    </main>
-    <div id="section5"></div>
-    <footer>
-      <ul id="a">
-        <li>
-          <h1>
-            <img
-              src="./assets/images/transparent-white.svg"
-              alt="Aman Sanoj Logo"
-              style="height: 1em; width: auto"
-            />
-          </h1>
-        </li>
-      </ul>
-      <ul>
-        <li><h3>Get in Touch</h3></li>
-        <li>
-          <a
-            href="mailto:aman@falak.me"
-            target="_blank"
-            rel="noopener noreferrer"
-            ><sl-icon name="envelope"></sl-icon>Email</a
-          >
-        </li>
-        <li>
-          <a
-            href="http://www.linkedin.com/in/amansanoj"
-            target="_blank"
-            rel="noopener noreferrer"
-            ><sl-icon name="linkedin"></sl-icon>LinkedIn</a
-          >
-        </li>
-        <li>
-          <a
-            href="http://github.com/AmanSanoj"
-            target="_blank"
-            rel="noopener noreferrer"
-            ><sl-icon name="github"></sl-icon>GitHub</a
-          >
-        </li>
-        <li>
-          <a
-            href="http://twitter.com/AmanSanoj"
-            target="_blank"
-            rel="noopener noreferrer"
-            ><sl-icon name="twitter"></sl-icon>Twitter</a
-          >
-        </li>
-        <li>
-          <a
-            href="https://instagram.com/aman_sanoj/"
-            target="_blank"
-            rel="noopener noreferrer"
-            ><sl-icon name="instagram"></sl-icon>Instagram</a
-          >
-        </li>
-      </ul>
-      <ul>
-        <li><h3>Sitemap</h3></li>
-        <li><a href="#section1">Home</a></li>
-        <li><a href="#section2">About</a></li>
-        <li><a href="#section3">Projects</a></li>
-        <li><a href="#section4">Certifications</a></li>
-      </ul>
-    </footer>
-    <sl-divider></sl-divider>
-    <div id="copyright">
-      <p>Made with <sl-icon name="suit-heart-fill"></sl-icon></p>
-<p>&#169 Aman Sanoj 2024</p>
     </div>
-  </body>
-  <script>
-    let age = document.getElementById("age");
-    currentAge = Math.floor(
-      (new Date().getTime() / 1000 - 1225526400) / (60 * 60 * 24 * 365)
-    );
-    age.innerHTML = currentAge;
+    <div id="section4">
+      <h1 style="margin: 0 auto; margin-bottom: 5px">My Certifications</h1>
+      <div class="grid" id="cert-grid"></div>
+      <sl-button id="show-hide" pill>Show More</sl-button>
+    </div>
+  </main>
+  <div id="section5"></div>
+  <footer>
+    <ul id="a">
+      <li>
+        <h1>
+          <img src="./assets/images/transparent-white.svg" alt="Aman Sanoj Logo" style="height: 1em; width: auto" />
+        </h1>
+      </li>
+    </ul>
+    <ul>
+      <li>
+        <h3>Get in Touch</h3>
+      </li>
+      <li>
+        <a href="mailto:aman@falak.me" target="_blank" rel="noopener noreferrer"><sl-icon
+            name="envelope"></sl-icon>Email</a>
+      </li>
+      <li>
+        <a href="http://www.linkedin.com/in/amansanoj" target="_blank" rel="noopener noreferrer"><sl-icon
+            name="linkedin"></sl-icon>LinkedIn</a>
+      </li>
+      <li>
+        <a href="http://github.com/AmanSanoj" target="_blank" rel="noopener noreferrer"><sl-icon
+            name="github"></sl-icon>GitHub</a>
+      </li>
+      <li>
+        <a href="http://twitter.com/AmanSanoj" target="_blank" rel="noopener noreferrer"><sl-icon
+            name="twitter"></sl-icon>Twitter</a>
+      </li>
+      <li>
+        <a href="https://instagram.com/aman_sanoj/" target="_blank" rel="noopener noreferrer"><sl-icon
+            name="instagram"></sl-icon>Instagram</a>
+      </li>
+    </ul>
+    <ul>
+      <li>
+        <h3>Sitemap</h3>
+      </li>
+      <li><a href="#section1">Home</a></li>
+      <li><a href="#section2">About</a></li>
+      <li><a href="#section3">Projects</a></li>
+      <li><a href="#section4">Certifications</a></li>
+    </ul>
+  </footer>
+  <sl-divider></sl-divider>
+  <div id="copyright">
+    <p>Made with <sl-icon name="suit-heart-fill"></sl-icon></p>
+    <p>&#169 Aman Sanoj 2024</p>
+  </div>
+</body>
+<script>
+  let age = document.getElementById("age");
+  currentAge = Math.floor(
+    (new Date().getTime() / 1000 - 1225526400) / (60 * 60 * 24 * 365)
+  );
+  age.innerHTML = currentAge;
 
-    async function loadCertificates() {
-  const grid = document.getElementById("cert-grid");
-  const button = document.getElementById("show-hide");
+  async function loadCertificates() {
+    const grid = document.getElementById("cert-grid");
+    const button = document.getElementById("show-hide");
 
-  try {
-    const res = await fetch("/assets/certificates/certificates.json");
-    const certs = await res.json();
+    try {
+      const res = await fetch("/assets/certificates/certificates.json");
+      const certs = await res.json();
 
-    let showingAll = false;
+      let showingAll = false;
 
-    function getVisibleCount() {
-      const containerWidth = grid.clientWidth;
-      const minColWidth = 350;
-      const columns = Math.floor(containerWidth / minColWidth) || 1;
-      return columns * 2; // 2 rows
-    }
+      function getVisibleCount() {
+        const containerWidth = grid.clientWidth;
+        const minColWidth = 350;
+        const columns = Math.floor(containerWidth / minColWidth) || 1;
+        return columns * 2; // 2 rows
+      }
 
-    function render() {
-      grid.innerHTML = "";
-      const limit = getVisibleCount();
-      const items = showingAll ? certs : certs.slice(0, limit);
+      function render() {
+        grid.innerHTML = "";
+        const limit = getVisibleCount();
+        const items = showingAll ? certs : certs.slice(0, limit);
 
-      items.forEach(file => {
-        const img = document.createElement("img");
-        img.src = `/assets/certificates/${file}`;
-        img.alt = `Certificate dated ${file.split(".")[0]}`;
-        img.loading = "lazy";
-        grid.appendChild(img);
+        items.forEach(file => {
+          const img = document.createElement("img");
+          img.src = `/assets/certificates/${file}`;
+          img.alt = `Certificate dated ${file.split(".")[0]}`;
+          img.loading = "lazy";
+          grid.appendChild(img);
+        });
+
+        if (certs.length > limit) {
+          button.style.display = "inline-block";
+          button.textContent = showingAll ? "Show Less" : "Show More";
+        } else {
+          button.style.display = "none";
+        }
+      }
+
+      button.addEventListener("click", () => {
+        showingAll = !showingAll;
+        render();
       });
 
-      if (certs.length > limit) {
-        button.style.display = "inline-block";
-        button.textContent = showingAll ? "Show Less" : "Show More";
-      } else {
-        button.style.display = "none";
-      }
-    }
-
-    button.addEventListener("click", () => {
-      showingAll = !showingAll;
+      // Render on load
       render();
-    });
 
-    // Render on load
-    render();
-
-    // Recalculate visible count & rerender on window resize
-    window.addEventListener("resize", () => {
-      if (!showingAll) {
-        render();
-      }
-    });
-  } catch (err) {
-    console.error("Failed to load certificates:", err);
+      // Recalculate visible count & rerender on window resize
+      window.addEventListener("resize", () => {
+        if (!showingAll) {
+          render();
+        }
+      });
+    } catch (err) {
+      console.error("Failed to load certificates:", err);
+    }
   }
-}
 
-document.addEventListener("DOMContentLoaded", loadCertificates);
+  document.addEventListener("DOMContentLoaded", loadCertificates);
+</script>
 
-
-  </script>
 </html>
