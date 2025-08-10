@@ -203,48 +203,64 @@
     age.innerHTML = currentAge;
 
     async function loadCertificates() {
-      const grid = document.getElementById("cert-grid");
-      const button = document.getElementById("show-hide");
+  const grid = document.getElementById("cert-grid");
+  const button = document.getElementById("show-hide");
 
-      try {
-        const res = await fetch("/assets/certificates/certificates.json");
-        let certs = await res.json();
+  try {
+    const res = await fetch("/assets/certificates/certificates.json");
+    const certs = await res.json();
 
-        // Sort by date from filename (DDMMYYYY.png)
-        certs.sort((a, b) => {
-          const parseDate = str => {
-            const [d, m, y] = str.replace(".png", "").split(/(?<=^\d{2})(?=\d{2})|(?<=^\d{4})(?=\d{4})/).map(Number);
-            return new Date(y, m - 1, d);
-          };
-          return parseDate(b) - parseDate(a); // newest first
-        });
+    let showingAll = false;
 
-        const limit = 10;
-        let showingAll = false;
+    function getVisibleCount() {
+      const containerWidth = grid.clientWidth;
+      const minColWidth = 350;
+      const columns = Math.floor(containerWidth / minColWidth) || 1;
+      return columns * 2; // 2 rows
+    }
 
-        function render() {
-          grid.innerHTML = "";
-          const items = showingAll ? certs : certs.slice(0, limit);
-          items.forEach(file => {
-            const img = document.createElement("img");
-            img.src = `/assets/certificates/${file}`;
-            img.alt = `Certificate dated ${file.split(".")[0]}`;
-            grid.appendChild(img);
-          });
-          button.textContent = showingAll ? "Show Less" : "Show More";
-        }
+    function render() {
+      grid.innerHTML = "";
+      const limit = getVisibleCount();
+      const items = showingAll ? certs : certs.slice(0, limit);
 
-        button.addEventListener("click", () => {
-          showingAll = !showingAll;
-          render();
-        });
+      items.forEach(file => {
+        const img = document.createElement("img");
+        img.src = `/assets/certificates/${file}`;
+        img.alt = `Certificate dated ${file.split(".")[0]}`;
+        img.loading = "lazy";
+        grid.appendChild(img);
+      });
 
-        render();
-      } catch (err) {
-        console.error("Failed to load certificates:", err);
+      if (certs.length > limit) {
+        button.style.display = "inline-block";
+        button.textContent = showingAll ? "Show Less" : "Show More";
+      } else {
+        button.style.display = "none";
       }
     }
 
-    loadCertificates();
+    button.addEventListener("click", () => {
+      showingAll = !showingAll;
+      render();
+    });
+
+    // Render on load
+    render();
+
+    // Recalculate visible count & rerender on window resize
+    window.addEventListener("resize", () => {
+      if (!showingAll) {
+        render();
+      }
+    });
+  } catch (err) {
+    console.error("Failed to load certificates:", err);
+  }
+}
+
+document.addEventListener("DOMContentLoaded", loadCertificates);
+
+
   </script>
 </html>

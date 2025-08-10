@@ -8,8 +8,8 @@
 }
 
 @font-face {
-  font-family: 'Aman Sanoj'
-  src: url('assets/AmanSanoj-Regular.ttf') format('ttf'),
+  font-family: 'Aman Sanoj';
+  src: url('assets/AmanSanoj-Regular.ttf') format('ttf')
 }
 
 html {
@@ -231,48 +231,41 @@ header .navbar sl-dropdown sl-menu-item::part(base):hover, header .navbar sl-dro
   flex-direction: column;
   padding-bottom: 20px;
 }
+
 #section4 .grid {
   display: grid;
   gap: 5px;
-  grid-auto-flow: row;
-  grid-template-areas: "a . . " "a . . " ". . b " ". . b ";
   justify-content: center;
   align-content: center;
   justify-items: center;
   align-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
 }
-@media (max-width: 768px) {
-  #section4 .grid {
-    grid-template-areas: "a . " "a . " ". b " ". b " ". . " ". . ";
-  }
-}
-@media (max-width: 480px) {
-  #section4 .grid {
-    grid-template-areas: "a" "." "." "." "." "b" "." "." "." "." "." ".";
-  }
-}
+
 #section4 .grid img {
   width: 90%;
 }
-#section4 .grid img:nth-child(n+6) {
-  display: none;
-}
+
 #section4 .grid #a {
-  grid-area: a;
+  grid-area: auto;
 }
+
 #section4 .grid #b {
-  grid-area: b;
+  grid-area: auto;
 }
+
 #section4 sl-button {
-  margin: 0 auto;
-  margin-top: 4px;
+  margin: 4px auto 0;
 }
+
 #section4 sl-button::part(base) {
   transition: all ease 0.3s;
 }
-#section4 sl-button::part(base):hover, #section4 sl-button::part(base):active, #section4 sl-button::part(base):focus {
+#section4 sl-button::part(base):hover,
+#section4 sl-button::part(base):active,
+#section4 sl-button::part(base):focus {
   background-color: #35185a;
-  border-color: rgba(0, 0, 0, 0);
+  border-color: transparent;
   color: #e7dfdd;
 }
 
