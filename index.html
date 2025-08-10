@@ -121,21 +121,8 @@
       </div>
       <div id="section4">
         <h1 style="margin: 0 auto; margin-bottom: 5px">My Certifications</h1>
-        <div class="grid">
-          <img id="a" src="/assets/certificates/cert1.jpg" alt="" />
-          <img src="/assets/certificates/cert2.jpg" alt="" />
-          <img src="/assets/certificates/cert3.jpg" alt="" />
-          <img src="/assets/certificates/cert4.jpg" alt="" />
-          <img src="/assets/certificates/cert5.jpg" alt="" />
-          <img src="/assets/certificates/cert6.jpg" alt="" />
-          <img src="/assets/certificates/cert7.jpg" alt="" />
-          <img src="/assets/certificates/cert8.jpg" alt="" />
-          <img id="b" src="/assets/certificates/cert9.jpg" alt="" />
-          <img src="/assets/certificates/cert10.jpg" alt="" />
-        </div>
-        <sl-button id="show-hide" pill onclick="showHideCerts()"
-          >Show More</sl-button
-        >
+        <div class="grid" id="cert-grid"></div>
+        <sl-button id="show-hide" pill>Show More</sl-button>
       </div>
     </main>
     <div id="section5"></div>
@@ -215,27 +202,49 @@
     );
     age.innerHTML = currentAge;
 
-    let certs = document.querySelectorAll("#section4 img:nth-child(n+6)");
-    let showHide = document.getElementById("show-hide");
-    let l = certs.length;
-    let state = false;
+    async function loadCertificates() {
+      const grid = document.getElementById("cert-grid");
+      const button = document.getElementById("show-hide");
 
-    function showHideCerts() {
-      if (!state) {
-        let x = 0;
-        for (; x < l; x++) {
-          certs[x].style.display = "block";
+      try {
+        const res = await fetch("/assets/certificates/certificates.json");
+        let certs = await res.json();
+
+        // Sort by date from filename (DDMMYYYY.png)
+        certs.sort((a, b) => {
+          const parseDate = str => {
+            const [d, m, y] = str.replace(".png", "").split(/(?<=^\d{2})(?=\d{2})|(?<=^\d{4})(?=\d{4})/).map(Number);
+            return new Date(y, m - 1, d);
+          };
+          return parseDate(b) - parseDate(a); // newest first
+        });
+
+        const limit = 10;
+        let showingAll = false;
+
+        function render() {
+          grid.innerHTML = "";
+          const items = showingAll ? certs : certs.slice(0, limit);
+          items.forEach(file => {
+            const img = document.createElement("img");
+            img.src = `/assets/certificates/${file}`;
+            img.alt = `Certificate dated ${file.split(".")[0]}`;
+            grid.appendChild(img);
+          });
+          button.textContent = showingAll ? "Show Less" : "Show More";
         }
-        showHide.innerHTML = "Show Less";
-        return (state = true);
-      } else {
-        let y = 0;
-        for (; y < l; y++) {
-          certs[y].style.display = "none";
-        }
-        showHide.innerHTML = "Show More";
-        return (state = false);
+
+        button.addEventListener("click", () => {
+          showingAll = !showingAll;
+          render();
+        });
+
+        render();
+      } catch (err) {
+        console.error("Failed to load certificates:", err);
       }
     }
+
+    loadCertificates();
   </script>
 </html>
