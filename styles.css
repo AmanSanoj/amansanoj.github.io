@@ -8,8 +8,8 @@
 }
 
 @font-face {
-  font-family: 'Aman Sanoj'; /* A unique name for your font */
-  src: url('AmanSanoj-Regular.ttf') format('ttf'),
+  font-family: 'Aman Sanoj'
+  src: url('assets/AmanSanoj-Regular.ttf') format('ttf'),
 }
 
 html {
